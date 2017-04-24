@@ -13,6 +13,8 @@ import pprint
 DEBUG = False
 VERBOSE = False
 
+#Esto esta en github
+
 # Como indicar que la primera columna es t y la segunda A.
 def PreparaCsv(fichero):
 
