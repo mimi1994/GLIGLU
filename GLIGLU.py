@@ -93,7 +93,7 @@ def gliglu():
     parser.add_argument("-m", "--microgramo", help=" Introduzca mg/grano", required="true")
     parser.add_argument("-d", "--directory", help=" Introduzca el directorio", required="true")
     #parser.add_argument("-v", "--volumen", help=" Introduzca el volumen de extraccion", required="true")
-#    parser.add_argument("-o", "--omega-gliadinas", help=" Poner omega-gliadinas de gluteninas en gliadinas Si/No", required="true")
+    parser.add_argument("-o", "--omegagliadinas", help=" Poner omega-gliadinas de gluteninas en gliadinas Si/No", required="true")
     args = parser.parse_args()
 
 
@@ -151,8 +151,6 @@ def gliglu():
                 pass
             '''
 
-            arrayGLI = []
-            arrayGLU = []
             #Ve = args.volumen
             Ve = 50.0
             peso = 50.0
@@ -239,17 +237,23 @@ def gliglu():
     pp.pprint(listaGLI)
     print "**** LISTA GLU ****"
     pp.pprint(listaGLU)
-    '''
-    if args.omega-gliadinas == Si:
-        if GLU and :# Nombre de muestra coincide y la repeticion es la misma:
-            resultadogliadinas['omega-gliadinas'] += resultadogluteninas['omega-gliadinas']
-        else:
-            pass
-    elif args.omega-gliadinas == No:
+
+    if args.omegagliadinas == 'Si':
+        for onlyfiles[i] in listaGLU:
+            if onlyfiles[i][3:0] == listaGLI(onlyfiles[i][3:0]):
+                resultadogliadinas['omega-gliadinas'] += resultadogluteninas['omega-gliadinas']
+            else:
+                pass
+    elif args.omegagliadinas == 'No':
         pass
     else:
         print 'Indique una de las dos opciones'
         sys.exit()
+
+    '''
+    arrayGLI = []
+    arrayGLU = []
+
     if # Nombre de muestra coincide y GLI coincide (tres repeticiones):
         arrayGLI = numpy.array([resultadogliadinas])
         promedioomega = numpy.mean(arrayGLI, axis = 1)
